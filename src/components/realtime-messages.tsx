@@ -84,9 +84,8 @@ export default function RealtimeMessages({
           const previousMessage = messages?.[i - 1];
 
           const shouldRenderUser =
-            !!previousMessage &&
-            previousMessage?.user_id !== message.user_id &&
-            !isMe;
+            !previousMessage ||
+            (previousMessage?.user_id !== message.user_id && !isMe);
 
           return (
             <div
