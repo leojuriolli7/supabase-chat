@@ -51,11 +51,9 @@ export default async function Index() {
       </nav>
 
       <div className="animate-in opacity-0 max-w-4xl px-3 text-foreground mx-auto">
-        <div className="w-full h-[calc(100vh-140px)] overflow-y-auto px-4 py-6">
-          {messages && (
-            <RealtimeMessages currentUser={user} initialMessages={messages} />
-          )}
-        </div>
+        {messages && (
+          <RealtimeMessages currentUser={user} initialMessages={messages} />
+        )}
 
         <div className="w-full flex justify-center bg-slate-100 border-t border-slate-200 py-2 h-[65px]">
           <form className="w-full" action={sendMessage}>
